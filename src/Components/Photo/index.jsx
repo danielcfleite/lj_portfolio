@@ -2,7 +2,7 @@ import { Blurhash } from "react-blurhash";
 import { Photo } from "./styles";
 import { useState, useEffect } from "react";
 
-export const ImageComponent = ({ src }) => {
+export const ImageComponent = ({ src, hash }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   useEffect(() => {
     const img = new Image();
@@ -15,11 +15,11 @@ export const ImageComponent = ({ src }) => {
     <>
       {!imageLoaded && (
         <Blurhash
-          hash="LHLN.4~q~qM{~q%MD%WB?bIUM{Rj"
-          width={200}
-          height={200}
-          resolutionX={32}
-          resolutionY={32}
+          hash={hash}
+          width={300}
+          height={300}
+          resolutionX={100}
+          resolutionY={100}
           punch={1}
         />
       )}

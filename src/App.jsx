@@ -1,6 +1,6 @@
 import { Nav } from "./Components/Nav";
-import { PhotosGrid } from "./Components/PhotoGrid";
 import { Container, GlobalStyle } from "./global";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <GlobalStyle />
       <Container>
         <Nav />
-        <PhotosGrid />
+        <Outlet />
       </Container>
     </>
   );

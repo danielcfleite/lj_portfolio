@@ -7,11 +7,12 @@ export const NavContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   color: #a9a9a9;
-  font-weight: bold;
+  font-weight: medium;
+  font-size: 0.8rem;
 `;
 
 export const Logo = styled.img`
-  height: 90%;
+  height: 50%;
   width: auto;
 `;
 
@@ -27,16 +28,21 @@ export const NavLink = styled.a`
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
   transition: 0.2s ease-in-out;
+  opacity: 0.6;
+  padding-bottom: 0.2rem;
 
   &:hover {
-    border-bottom: 2px solid #a9a9a9;
+    border-bottom: 2px solid #4d6f59;
+    opacity: 1;
   }
 `;
 
 export const SocialLink = styled.a`
   transition: 0.2s ease-in-out;
+  opacity: 0.6;
 
   &:hover {
     transform: translateY(-2px);
+    opacity: 1;
   }
 `;
