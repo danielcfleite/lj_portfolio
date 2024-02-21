@@ -427,7 +427,7 @@ export const photos = {
       {
         id: 16,
         src: "https://i.imgur.com/ZMgoGev.jpeg",
-        hash: "https://blurha.sh/",
+        hash: "LQHK^L-n-pX9?wIWa$og-pV@W=%M",
       },
     ],
     festasEComemoracoes: [

@@ -4,16 +4,22 @@ import { useState, useEffect } from "react";
 
 export const ImageComponent = ({ src, hash }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [blurHashError, setBlurHashError] = useState(false);
+
   useEffect(() => {
     const img = new Image();
     img.onload = () => {
       setImageLoaded(true);
     };
+    img.onerror = () => {
+      setBlurHashError(true); // Set blurHashError state if image loading fails
+    };
     img.src = src;
   }, [src]);
+
   return (
     <>
-      {!imageLoaded && (
+      {!imageLoaded && !blurHashError && (
         <Blurhash
           hash={hash}
           width={300}
@@ -23,7 +29,9 @@ export const ImageComponent = ({ src, hash }) => {
           punch={1}
         />
       )}
-      {imageLoaded && <Photo src={src} />}
+      {imageLoaded && !blurHashError && <Photo src={src} />}
+      {blurHashError && <Photo src={src} />}{" "}
+      {/* Fallback to regular photo if BlurHash fails */}
     </>
   );
 };
