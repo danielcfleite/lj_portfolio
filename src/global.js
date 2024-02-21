@@ -17,6 +17,7 @@ body{
     height: 100vh;
     max-width: 100vw; 
     background-color: #f2f2f2;
+    overflow-x: hidden;
 }
 
 `;

@@ -5,7 +5,6 @@ import {
   Logo,
   MobileMenu,
   NavContainer,
-  NavLink,
   SocialLink,
 } from "./styles";
 import { PiInstagramLogoFill } from "react-icons/pi";
@@ -51,18 +50,10 @@ export const Nav = () => {
       <NavContainer>
         <Logo src={logo} />
         <LinksContainer>
-          <Link to="/">
-            <NavLink>Overview</NavLink>
-          </Link>
-          <Link to="/retratos">
-            <NavLink href="#">Retratos</NavLink>
-          </Link>
-          <Link to="/eventos">
-            <NavLink href="#">Eventos</NavLink>
-          </Link>
-          <Link to="/corporativo">
-            <NavLink href="#">Corporativo</NavLink>
-          </Link>
+          <Link to="/">Overview</Link>
+          <Link to="/retratos">Retratos</Link>
+          <Link to="/eventos">Eventos</Link>
+          <Link to="/corporativo">Corporativo</Link>
           {/* <NavLink href="#">Sobre</NavLink> */}
         </LinksContainer>
         <LinksContainer>

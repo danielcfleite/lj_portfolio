@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { PhotosGrid } from "../Components/PhotoGrid";
+import {
+  ButtonTag,
+  SelectionContainer,
+} from "../Components/ButtonSelect/styles";
 
 export const Retratos = () => {
   const [category, setCategory] = useState("genteESom");
@@ -16,9 +20,24 @@ export const Retratos = () => {
       setCategory("moda");
     }
   };
+  const isPeopleandSoundSelected = category === "genteESom";
+
   return (
     <>
-      <button onClick={() => handleSelection()}>Toggle</button>
+      <SelectionContainer>
+        <ButtonTag
+          onClick={handleSelection}
+          selected={!isPeopleandSoundSelected}
+        >
+          Moda
+        </ButtonTag>
+        <ButtonTag
+          onClick={handleSelection}
+          selected={isPeopleandSoundSelected}
+        >
+          Gente e Som
+        </ButtonTag>
+      </SelectionContainer>
       {loading ? (
         <h1>Carregando...</h1>
       ) : (
