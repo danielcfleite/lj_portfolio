@@ -442,11 +442,6 @@ export const photos = {
         hash: "LZLWeV%f-.xb*0%Logoy%NShs;kC",
       },
       {
-        id: 3,
-        src: "https://i.imgur.com/86aUtpl.jpeg",
-        hash: "LEBpCRE0s;IU~XRjxuRj%3WBIoxb",
-      },
-      {
         id: 4,
         src: "https://i.imgur.com/Zryx30Y.jpeg",
         hash: "LxOCmgD%O?Na_Nae%2xaS#tRt8bH",

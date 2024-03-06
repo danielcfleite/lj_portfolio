@@ -24,11 +24,11 @@ export const Eventos = () => {
   return (
     <>
       <SelectionContainer>
-        <ButtonTag onClick={handleSelection} selected={!isPartySelected}>
-          Família e Infantil
-        </ButtonTag>
         <ButtonTag onClick={handleSelection} selected={isPartySelected}>
           Festas e Comemorações
+        </ButtonTag>
+        <ButtonTag onClick={handleSelection} selected={!isPartySelected}>
+          Família e Infantil
         </ButtonTag>
       </SelectionContainer>
       {/* <button onClick={() => handleSelection()}>Toggle</button> */}

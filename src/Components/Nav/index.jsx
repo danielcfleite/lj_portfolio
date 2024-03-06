@@ -5,6 +5,7 @@ import {
   Logo,
   MobileMenu,
   NavContainer,
+  SecondaryLinksContainer,
   SocialLink,
 } from "./styles";
 import { PiInstagramLogoFill } from "react-icons/pi";
@@ -12,15 +13,29 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Hamburger from "hamburger-react";
 import { useState } from "react";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export const Nav = () => {
   const [isOpen, setOpen] = useState(false);
   const handleToggleMenu = () => {
     setOpen(!isOpen);
-    // Toggle body overflow style to prevent scrolling when menu is open
-    document.documentElement.style.overflow = isOpen ? "auto" : "hidden";
   };
-
+  const [portraitOptions, setPortraitOptions] = useState(false);
+  const [eventsOptions, setEventsOptions] = useState(false);
+  const handlePortraitClick = () => {
+    setEventsOptions(false);
+    setPortraitOptions(true);
+    if (portraitOptions === true) {
+      setPortraitOptions(false);
+    }
+  };
+  const handleEventsClick = () => {
+    setEventsOptions(true);
+    setPortraitOptions(false);
+    if (eventsOptions === true) {
+      setEventsOptions(false);
+    }
+  };
   return (
     <>
       <HambuguerMenuWrapper>
@@ -37,12 +52,41 @@ export const Nav = () => {
         <Link to="/" onClick={() => setOpen(!open)}>
           Overview
         </Link>
-        <Link to="/retratos" onClick={() => setOpen(!open)}>
-          Retratos
+        <Link onClick={handlePortraitClick}>
+          Retratos <MdKeyboardArrowDown />
         </Link>
-        <Link to="/eventos" onClick={() => setOpen(!open)}>
-          Eventos
+        {portraitOptions ? (
+          <>
+            <SecondaryLinksContainer>
+              <Link to="/moda" onClick={() => setOpen(!open)}>
+                Moda
+              </Link>
+              <Link to="/gente-e-som" onClick={() => setOpen(!open)}>
+                Gente e som
+              </Link>
+            </SecondaryLinksContainer>
+          </>
+        ) : (
+          <></>
+        )}
+
+        <Link onClick={handleEventsClick}>
+          Eventos <MdKeyboardArrowDown />
         </Link>
+        {eventsOptions ? (
+          <>
+            <SecondaryLinksContainer>
+              <Link to="/festas-e-comemoracoes" onClick={() => setOpen(!open)}>
+                Festas e comemorações
+              </Link>
+              <Link to="/familia-e-infantil" onClick={() => setOpen(!open)}>
+                Família e infantil
+              </Link>
+            </SecondaryLinksContainer>
+          </>
+        ) : (
+          <></>
+        )}
         <Link to="/corporativo" onClick={() => setOpen(!open)}>
           Corporativo
         </Link>

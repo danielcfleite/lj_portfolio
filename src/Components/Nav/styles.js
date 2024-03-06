@@ -57,7 +57,7 @@ export const SocialLink = styled.a`
 
 export const HambuguerMenuWrapper = styled.div`
   display: none;
-  z-index: 4;
+  z-index: 999;
   position: absolute;
   top: 0;
   right: 0;
@@ -70,9 +70,10 @@ export const HambuguerMenuWrapper = styled.div`
 `;
 
 export const MobileMenu = styled.div`
-  z-index: 3;
-  position: absolute;
+  z-index: 2;
+  position: fixed;
   display: flex;
+  align-items: flex-start;
   align-items: center;
   justify-content: center;
   gap: 2rem;
@@ -86,9 +87,32 @@ export const MobileMenu = styled.div`
   transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(100%)")};
 
   & > a {
+    align-items: center;
     text-decoration: none;
+    display: block;
     color: #4d6f59;
     font-size: 1.5rem;
     font-weight: bold;
+
+    text-align: center;
+    width: 100%;
+  }
+`;
+
+export const SecondaryLinksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  > a {
+    width: 100%;
+    display: block;
+    color: #4d6f59;
+    font-size: 1rem;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
   }
 `;
